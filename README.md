@@ -98,10 +98,12 @@ The goal is to identify customers who are likely to be unhappy based on their fe
 ---
 
 ## 👤 Author
-**Umayer Kabir** 
-Year: 2nd
-Major: Data Science (Math Concentration)  
-University of Texas at Arlington  
+
+**Umayer Kabir**
+
+- Year: 2nd  
+- Major: Data Science (Math Concentration)  
+- University: University of Texas at Arlington
 
 ---
 
