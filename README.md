@@ -144,12 +144,7 @@ Santander-Customer-Satisfaction/
 
 1. Clone the repository  
 
-2. Place the following files from dataset into the **project root folder** (same location as the notebook):
-   - `train.csv`
-   - `test.csv`
-   - `sample_submission.csv`
-
-3. Run the notebook from Final Notebook Folder:
+2. Run the notebook from Final Notebook Folder:
    - `santander_customer_satisfaction_complete.ipynb`
 ---
 
