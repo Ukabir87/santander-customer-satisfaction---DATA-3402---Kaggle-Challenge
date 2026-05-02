@@ -91,7 +91,7 @@ Model training was performed using Python and scikit-learn in a Jupyter Notebook
 | Logistic Regression | ~0.803 |
 | Extra Trees | ~0.790 |
 
-👉 The **Histogram Gradient Boosting model** achieved the highest ROC-AUC score and was selected as the final model.
+The **Histogram Gradient Boosting model** achieved the highest ROC-AUC score and was selected as the final model.
 
 ---
 
@@ -118,7 +118,64 @@ Model training was performed using Python and scikit-learn in a Jupyter Notebook
 - Feature engineering (e.g., interaction features)
 - Use advanced models like XGBoost or LightGBM
 - Apply class balancing techniques (SMOTE, etc.)
-- Hyperparameter tuning for better performance
+
+---
+
+## Visualizations
+
+Here are some of the visualizations created throughout the notebook to better understand the data and how the models performed.
+
+---
+
+### Feature Distribution Histograms
+
+Density histograms were plotted for a few key features to get a feel for how the data is spread out. Density was used instead of raw counts so the plots are easier to compare, and the x-axis was trimmed to cut off extreme outliers. A lot of the features turned out to be heavily skewed toward zero.
+
+| var3 | var15 |
+|------|-------|
+| ![feature_dist_var3](images/feature_dist_var3.png) | ![feature_dist_var15](images/feature_dist_var15.png) |
+
+| var36 | var38 |
+|-------|-------|
+| ![feature_dist_var36](images/feature_dist_var36.png) | ![feature_dist_var38](images/feature_dist_var38.png) |
+
+| num_var4 |
+|----------|
+| ![feature_dist_num_var4](images/feature_dist_num_var4.png) |
+
+---
+
+### Class-Based Density Histograms
+
+Same idea as above, but this time the distributions for satisfied vs. unsatisfied customers are overlaid on the same plot. Using density here was important because there are way fewer unsatisfied customers, so raw counts would make class 1 nearly invisible. This makes it easier to spot which features actually look different between the two groups.
+
+| var3 | var15 |
+|------|-------|
+| ![class_density_var3](images/class_density_var3.png) | ![class_density_var15](images/class_density_var15.png) |
+
+| var36 | var38 |
+|-------|-------|
+| ![class_density_var36](images/class_density_var36.png) | ![class_density_var38](images/class_density_var38.png) |
+
+| num_var4 |
+|----------|
+| ![class_density_num_var4](images/class_density_num_var4.png) |
+
+---
+
+### ROC Curve for Best Model
+
+The ROC curve for the best model shows how well it separates the two classes. The dashed line represents random guessing — the further the curve bows away from it, the better. The final model landed at an AUC of **0.889**.
+
+![ROC Curve](images/roc_curve.png)
+
+---
+
+### Threshold Tuning Visualization
+
+The default 0.5 threshold doesn't work great when classes are imbalanced, so this plot shows how precision, recall, and F1 change as the threshold shifts. It helps find a cutoff that does a better job of actually catching unsatisfied customers.
+
+![Threshold Tuning](images/threshold_tuning.png)
 
 ---
 
